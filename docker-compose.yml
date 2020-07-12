@@ -3,13 +3,13 @@ version: "2.1"
 services:
         unifi-controller:
                 image: linuxserver/unifi-controller
-                container_name: unifi
+                container_name: unifi-controller
                 environment:
                         - PUID=${XUID}
                         - PGID=${XGID}
-                        - MEM_LIMIT=1024M #optional
+                        - MEM_LIMIT=2048M
                 volumes:
-                        - /apps/unifi/config
+                        - /apps/unifi/config:/config
                 ports:
                         - 3478:3478/udp
                         - 10001:10001/udp
