@@ -16,13 +16,14 @@ $ sudo apt install docker-compose
 ```
 
 #### UFW Firewall
+This enables the firewall (default: block all incoming) and then opens port for SSH access
 ```
 $ sudo apt install ufw
 $ sudo ufw enable 22
 ```
 
 ### Firewall Configuration
-Copy the included ufw_unifi rules file into ufw application directory
+Copy the included ufw_unifi rules file into ufw application directory. This will open all the ports utilized by the Unifi Controller as documented [here](https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
 ```
 $ /etc/ufw/applications.d
 ```
