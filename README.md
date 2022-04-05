@@ -2,10 +2,11 @@
 Unifi Controller Configuration
 
 ### Prerequisistes
-- Docker
-- Docker Compose
-- UFW(Firewall)
+- [Docker](https://docs.docker.com/engine/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [UFW(Firewall)](https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
 - [Docker Image](https://docs.linuxserver.io/images/docker-unifi-controller)
+
 ### Docker Installation
 #### Docker
 See [Ubuntu Docs](https://docs.docker.com/engine/install/ubuntu/) or [Debian Docs](https://docs.docker.com/engine/install/debian/)
@@ -34,11 +35,11 @@ sudo ufw allow Unifi
 ```
 
 ### Unifi Docker Configuration
-```
-$ sudo mkdir /apps/unifi/config
-$ sudo chmod -R johnsoga:johnsoga: /apps
-$ cd /apps/unifi
-$ git clone https://github.com/johnsoga/unifi .
+```shell
+sudo mkdir /apps/docker/unifi/config
+sudo chmod -R johnsoga:johnsoga: /apps
+cd /apps/docker/unifi
+git clone https://github.com/johnsoga/unifi .
 ```
 
 ### Running
