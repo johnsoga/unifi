@@ -24,14 +24,15 @@ $ sudo ufw enable 22
 ```
 
 ### Firewall Configuration
-Copy the included ufw_unifi rules file into ufw application directory. This will open all the ports utilized by the Unifi Controller as documented [here](https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
-```
-$ /etc/ufw/applications.d
+Copy the included ufw firewall rules from the ufw_unifi file into a new file in the ufw application directory. This will open all the ports utilized by the Unifi Controller as documented [here](https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
+```shell
+cd /etc/ufw/applications.d
+sudo vim unifi
 ```
 then enable the rules
 ```
-$ sudo ufw app update unifi_rules
-$ sudo ufw allow Unifi
+sudo ufw app update unifi_rules
+sudo ufw allow Unifi
 ```
 
 ### Unifi Docker Configuration
