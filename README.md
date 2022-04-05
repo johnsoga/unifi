@@ -16,22 +16,25 @@ See [Install Docs](https://docs.docker.com/compose/install/). *If running on Ras
 $ sudo apt install docker-compose
 ```
 
-#### UFW Firewall
-This enables the firewall (default: block all incoming) and then opens port for SSH access
-```
-$ sudo apt install ufw
-$ sudo ufw enable 22
-```
+
 
 ### Firewall Configuration
+#### UFW Firewall
+This installs and enables the firewall (default: block all incoming) and then opens port for SSH access so we don't lose access to the server
+```shell
+sudo apt install ufw
+sudo ufw allow OpenSSH
+sudo ufw enable
+```
+#### Unifi Rules
 Copy the included ufw firewall rules from the ufw_unifi file into a new file in the ufw application directory. This will open all the ports utilized by the Unifi Controller as documented [here](https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
 ```shell
 cd /etc/ufw/applications.d
 sudo vim unifi
 ```
 then enable the rules
-```
-sudo ufw app update unifi_rules
+```shell
+sudo ufw app update unifi
 sudo ufw allow Unifi
 ```
 
