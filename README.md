@@ -6,17 +6,12 @@ Unifi Controller Configuration
 - Docker Compose
 - UFW(Firewall)
 - [Docker Image](https://docs.linuxserver.io/images/docker-unifi-controller)
-
+### Docker Installation
 #### Docker
 See [Ubuntu Docs](https://docs.docker.com/engine/install/ubuntu/) or [Debian Docs](https://docs.docker.com/engine/install/debian/)
 
 #### Docker Compose
-See [Install Docs](https://docs.docker.com/compose/install/). *If running on Raspberry PI (ARM) install from apt repo*
-```
-$ sudo apt install docker-compose
-```
-
-
+See [Install Docs](https://docs.docker.com/compose/install/)
 
 ### Firewall Configuration
 #### UFW Firewall
