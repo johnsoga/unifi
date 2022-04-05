@@ -35,22 +35,23 @@ sudo ufw allow Unifi
 ```
 
 ### Unifi Docker Configuration
+Copy the contents of the `docker-compose.yaml` file into your `docker-compose.yaml` file. Depending on your use case you may have the Unifi Controller listening on the default machine interface IP in which case you can remove `[IP_ADDR]:` from the relevant lines as you only need to map the ports and not to a specific IP address. 
 ```shell
-sudo mkdir /apps/docker/unifi/config
+sudo mkdir /apps
 sudo chmod -R johnsoga:johnsoga: /apps
-cd /apps/docker/unifi
-git clone https://github.com/johnsoga/unifi .
+mkdir /apps/docker/unifi
+vim docker-compose.yaml
 ```
 
 ### Running
-```
-$ cd /apps/unifi
-$ docker pull linuxserver/unifi-controller
-$ XUID=$(id -u $USER) XGID=$(id -g $USER) docker-compose up -d unifi-controller
+```shell
+cd /apps/docker/unifi
+XUID=$(id -u $USER) XGID=$(id -g $USER) docker pull
+XUID=$(id -u $USER) XGID=$(id -g $USER) docker compose up -d
 ```
 
 ### Updates
-```
-$ cd /apps/unifi
-$ XUID=$(id -u $USER) XGID=$(id -g $USER) docker-compose pull unifi-controller
+```shell
+cd /apps/docker/unifi
+XUID=$(id -u $USER) XGID=$(id -g $USER) docker-compose pull
 ```
