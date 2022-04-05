@@ -1,23 +1,23 @@
 ---
 version: "2.1"
 services:
-        unifi-controller:
-                image: ghcr.io/linuxserver/unifi-controller
-                container_name: unifi-controller
-                environment:
-                        - PUID=${XUID}
-                        - PGID=${XGID}
-                        - MEM_LIMIT=2048M       # Optional
-                volumes:
-                        - /apps/unifi/config:/config
-                ports:
-                        - 1900:1900/udp         # Port used for "Make controller discoverable on L2 network" in controller settings
-                        - 3478:3478/udp         # Port used for STUN
-                        - 5514:5514/udp         # Port used for remote syslog capture
-                        - 6789:6789             # Port used for UniFi mobile speed test
-                        - 8080:8080             # Port used for device and controller communication
-                        - 8443:8443             # Port used for controller GUI/API as seen in a web browser
-                        - 8843:8843             # Port used for HTTPS portal redirection
-                        - 8880:8880             # Port used for HTTP portal redirection
-                        - 10001:10001/udp       # Port used for device discovery
-                restart: unless-stopped
+  unifi-controller:
+    image: lscr.io/linuxserver/unifi-controller
+    container_name: unifi-controller
+    environment:
+      - PUID=${XUID}
+      - PGID=${XGID}
+      - MEM_LIMIT=2048M #optional
+    volumes:
+      - /apps/docker/unifi/config:/config
+    ports:
+      - [IP_ADDR]:1900:1900/udp         # Port used for "Make controller discoverable on L2 network" in controller settings
+      - [IP_ADDR]:3478:3478/udp         # Port used for STUN
+      - [IP_ADDR]:5514:5514/udp         # Port used for remote syslog capture
+      - [IP_ADDR]:6789:6789             # Port used for UniFi mobile speed test
+      - [IP_ADDR]:8080:8080             # Port used for device and controller communication
+      - [IP_ADDR]:8443:8443             # Port used for controller GUI/API as seen in a web browser
+      - [IP_ADDR]:8843:8843             # Port used for HTTPS guest portal redirection
+      - [IP_ADDR]:8880:8880             # Port used for HTTP guest portal redirection
+      - [IP_ADDR]:10001:10001/udp       # Port used for device discovery
+    restart: unless-stopped
