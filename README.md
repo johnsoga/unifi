@@ -7,6 +7,9 @@ Unifi Controller Configuration
 - [UFW(Firewall)](https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
 - [Docker Image](https://docs.linuxserver.io/images/docker-unifi-controller)
 
+### DHCP Server
+In the DHCP Server settings for the interface that the Unifi Controller is connected to be sure to enable [DHCP Option 43](https://datatracker.ietf.org/doc/html/rfc2132#section-8.4). This essentially will allow additional devices to know how to contact the Unifi Controller for Adoption. 
+
 ### Docker Installation
 #### Docker
 See [Ubuntu Docs](https://docs.docker.com/engine/install/ubuntu/) or [Debian Docs](https://docs.docker.com/engine/install/debian/)
