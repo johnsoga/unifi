@@ -8,7 +8,7 @@ Unifi Controller Configuration
 - [Docker Image](https://docs.linuxserver.io/images/docker-unifi-controller)
 
 ### DHCP Server
-In the DHCP Server settings for the interface that the Unifi Controller is connected to be sure to enable [DHCP Option 43](https://datatracker.ietf.org/doc/html/rfc2132#section-8.4). This essentially will allow additional devices to know how to contact the Unifi Controller for Adoption. 
+In the DHCP Server settings for the interface that the Unifi Controller is connected to be sure to enable [DHCP Option 43](https://datatracker.ietf.org/doc/html/rfc2132#section-8.4). This essentially will allow additional devices to know how to contact the Unifi Controller for Adoption. This [site](https://tcpip.wtf/en/unifi-l3-adoption-with-dhcp-option-43-on-pfsense-mikrotik-and-others.htm) can help calculate/convert the information needed for use with pfSense as well as other manufacturers 
 
 ### Docker Installation
 #### Docker
